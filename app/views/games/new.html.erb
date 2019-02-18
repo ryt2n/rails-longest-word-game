@@ -1,2 +1,11 @@
 <h1>Games#new</h1>
-<p>Find me in app/views/games/new.html.erb</p>
+<p></p>
+<% @letters.each do |l| %>
+<div class="character"><%= l %></div>
+<% end %>
+
+<form action="/score" method="post">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <input type="text" name="name" placeholder="your best guess">
+  <input type="submit" value="Play">
+</form>
